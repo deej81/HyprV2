@@ -17,3 +17,4 @@ tailscale
 visual-studio-code-bin
 wget
 yubikey-manager
+spotify
