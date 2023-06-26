@@ -162,6 +162,10 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
         fi
     done
 
+    #Stage 2
+    echo -e "\n$CNT - Stage 2.5 - Installing additional tools from extra-packages.txt..."
+    yay -S --needed - < extra-packages.txt &>> $INSTLOG
+    
     #Stage 3
     echo -e "\n$CNT - Stage 3 - Installing theme and visual related tools and utilities, this may take a while..."
     for SOFTWR in starship ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance xfce4-settings sddm-git sddm-sugar-candy-git 
