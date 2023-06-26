@@ -162,9 +162,10 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
         fi
     done
 
-    #Stage 2
+    #Stage 2.5
     echo -e "\n$CNT - Stage 2.5 - Installing additional tools from extra-packages.txt..."
-    yay -S --needed - < extra-packages.txt &>> $INSTLOG
+    yay -S --needed --noconfirm - < extra-packages.txt &>> $INSTLOG
+    git clone https://github.com/deej81/nvim.git ~/.config/nvim &>> $INSTLOG
     
     #Stage 3
     echo -e "\n$CNT - Stage 3 - Installing theme and visual related tools and utilities, this may take a while..."
@@ -204,7 +205,7 @@ fi
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to copy config files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "$CNT - Copying config files..."
-    for DIR in hypr kitty mako swaylock waybar wlogout wofi 
+    for DIR in hypr kitty mako swaylock waybar wlogout wofi
     do 
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
@@ -255,7 +256,7 @@ fi
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to activate the starship shell? (y,n) ' STAR
 if [[ $STAR == "Y" || $STAR == "y" ]]; then
     # install the starship shell
-    echo -e "$CNT - Hansen Crusher, Engage!"
+    echo -e "$CNT - Ensign Crusher, Engage!"
     echo -e "$CNT - Updating .bashrc..."
     echo -e '\neval "$(starship init bash)"' >> ~/.bashrc
     echo -e "$CNT - copying starship config file to ~/.confg ..."
