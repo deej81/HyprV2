@@ -3,8 +3,6 @@
 docker
 docker-buildx
 docker-compose
-doppler-cli
-firefox
 github-cli
 google-chrome
 libfido2
@@ -18,3 +16,4 @@ visual-studio-code-bin
 wget
 yubikey-manager
 spotify
+wl-clipboard
