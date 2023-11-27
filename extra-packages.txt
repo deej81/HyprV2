@@ -4,7 +4,6 @@ docker
 docker-buildx
 docker-compose
 github-cli
-google-chrome
 libfido2
 pulseaudio
 pulseaudio-alsa
